@@ -4,8 +4,11 @@
 **Projekt:** Automatisierte Qualitätsprüfung von Holzrahmenbauwänden in IFC-Modellen
 
 **Team:** Team 5
+
 **Version:** MVP 0.1
+
 **Stand:** 27.10.2026
+
 **Status:** In Bearbeitung
 
 ---
