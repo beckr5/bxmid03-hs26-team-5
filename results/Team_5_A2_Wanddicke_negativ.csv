@@ -1,0 +1,2 @@
+﻿GlobalId;Klasse;Name;Datenpfad;Ist_Wert_m;Soll_Regel;Regel_ID;Ergebnis;Grund;Modell;Modell_SHA256;IFC_Schema;IfcOpenShell_Version;Pruefzeit_UTC
+2ucZRLBGP4uxZW$9i1VAZ8;IfcWall;Wall #1;Qto_WallBaseQuantities.Width;0.0;Qto_WallBaseQuantities.Width > 0 m;A2;durchgefallen;Width muss grösser als 0 m sein;Demo_Holzrahmen_fehlerhaft.ifc;688c3ff8258fb025accf7e8b286c49fe0e202974b7af29940adccf82c0886c0a;IFC4;0.9.0.post1;2026-10-27T20:56:00Z
