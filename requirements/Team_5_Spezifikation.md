@@ -8,11 +8,13 @@
 
 ## 1. Ziel
 
-Wir möchten ausgewählte Informationen von Holzrahmenbauwänden in IFC-Modellen automatisch prüfen.
+Wir möchten ausgewählte Informationen von Wandbauteilen in IFC-Modellen automatisch prüfen.
 
 Damit sollen fehlende oder ungültige Angaben frühzeitig erkannt werden. Die Prüfung ist vor der Werkplanung vorgesehen.
 
-Für das erste MVP haben wir die **Wanddicke (A2)** als automatisierten Check umgesetzt. Die Wandbezeichnung (A1) und die Materialzuordnung (A3) sind für die weitere Entwicklung vorgesehen.
+Für unser erstes MVP haben wir die **Wanddicke (A2)** als automatisierten Check umgesetzt. Die Wandbezeichnung (A1) und Materialzuordnung (A3) sind für die weitere Entwicklung vorgesehen.
+
+Zusätzlich haben wir untersucht, ob unsere Prüfregel bei unterschiedlichen IFC-Versionen funktioniert.
 
 ## 2. Informationsanforderungen
 
@@ -21,7 +23,7 @@ Wir haben drei Anforderungen definiert:
 | ID | Anforderung       | IFC-Information                  | Prüfregel                     | Status    |
 | -- | ----------------- | -------------------------------- | ----------------------------- | --------- |
 | A1 | Wandbezeichnung   | `IfcWall.Name`                   | Text vorhanden und nicht leer | Geplant   |
-| A2 | Wanddicke         | `Qto_WallBaseQuantities.Width`   | Wert > 0 m                    | Umgesetzt |
+| A2 | Wanddicke         | `Width` aus den IFC-Mengendaten  | Wert > 0 m                    | Umgesetzt |
 | A3 | Materialzuordnung | z. B. `IfcRelAssociatesMaterial` | Zuordnung vorhanden           | Geplant   |
 
 Bei A1 soll später geprüft werden, ob der Name fehlt oder nur aus Leerzeichen besteht.
@@ -34,27 +36,27 @@ Die Anforderungen sind zusätzlich in unserer AIA-BEP-Matrix dokumentiert.
 
 ### 3.1 Auswahl der Wandobjekte
 
-Unser Check sucht im IFC-Modell nach Objekten der Klasse:
+Unser Check sucht nach Objekten der IFC-Klasse:
 
 `IfcWall` (inklusive Unterklassen)
 
-Damit nur die vorgesehenen Wände aus den Lehrmodellen geprüft werden, verwenden wir zusätzlich den Filter:
+Die Auswahl unterscheidet sich je nach Modell:
 
-`CH_Lehre.Scope = Holzrahmen-MVP`
+| Kriterium | IFC4-Lehrmodelle                  | IFC2X3-BIMcollab-Modell      |
+| --------- | --------------------------------- | ---------------------------- |
+| Objekte   | `IfcWall` inkl. Unterklassen      | `IfcWall` inkl. Unterklassen |
+| Auswahl   | `CH_Lehre.Scope = Holzrahmen-MVP` | Alle Wandobjekte             |
+| Datenpfad | `Qto_WallBaseQuantities.Width`    | `BaseQuantities.Width`       |
 
-Dieser Filter wurde für die verwendeten Lehrmodelle festgelegt.
+Der zusätzliche Filter aus den IFC4-Lehrmodellen ist im BIMcollab-Modell nicht vorhanden. Deshalb prüfen wir dort alle Wandobjekte.
 
 ### 3.2 Prüfregel
 
-Die Wanddicke wird aus folgender IFC-Information ausgelesen:
+Für beide IFC-Versionen verwenden wir dieselbe Anforderung:
 
-`Qto_WallBaseQuantities.Width`
+**Wanddicke > 0 m**
 
-Anschliessend wird der Wert mit unserer Prüfregel verglichen:
-
-**Width > 0 m**
-
-Die Längeneinheit wird aus dem IFC-Modell gelesen und für die Prüfung in Meter umgerechnet.
+Die Wanddicke wird aus den IFC-Mengendaten ausgelesen und unter Berücksichtigung der Modelleinheit in Meter umgerechnet.
 
 | Bedingung             | Ergebnis      |
 | --------------------- | ------------- |
@@ -63,7 +65,7 @@ Die Längeneinheit wird aus dem IFC-Modell gelesen und für die Prüfung in Mete
 | Wanddicke fehlt       | Fehlend       |
 | Ungültiger Zahlenwert | Durchgefallen |
 
-Wenn keine Wand zum definierten Filter passt, wird die Prüfung mit einer Fehlermeldung abgebrochen.
+Wenn keine passenden Wandobjekte gefunden werden, wird die Prüfung mit einer Fehlermeldung abgebrochen.
 
 ### 3.3 Verwendete Software
 
@@ -71,54 +73,59 @@ Wir haben den Check mit folgenden Werkzeugen umgesetzt:
 
 | Werkzeug                 | Verwendung                           |
 | ------------------------ | ------------------------------------ |
-| Google Colab             | Notebook ausführen                   |
+| Google Colab             | Notebooks ausführen                  |
 | Python                   | Prüflogik                            |
 | IfcOpenShell 0.9.0.post1 | IFC-Daten auslesen                   |
 | pandas                   | Ergebnisse auswerten und exportieren |
 | GitHub                   | Dateien und Ergebnisse dokumentieren |
 
-Die Prüfung wurde als Python-Code umgesetzt. Eine separate IDS-Datei wurde bisher nicht erstellt.
+Wir verwenden zwei Notebooks:
 
-**Notebook:**
+**IFC4-Lehrmodelle:**
 
 `checks/Team_5_Wanddickencheck.ipynb`
+
+**IFC2X3-BIMcollab-Modell:**
+
+`checks/Team_5_IFC2X3_Wanddickencheck.ipynb`
+
+Die Prüfung wurde als Python-Code umgesetzt. Eine separate IDS-Datei wurde bisher nicht erstellt.
 
 Die Anleitung zur Ausführung befindet sich in der zentralen `README.md`.
 
 ## 4. Verwendete IFC-Modelle
 
-Unser ursprüngliches Arbeitsmodell ist:
+Wir haben drei IFC-Dateien verwendet:
 
-`Team_5_BIMcollab_Example_STR.ifc` (IFC2X3)
+| Modell                             | IFC-Version | Verwendung                       |
+| ---------------------------------- | ----------- | -------------------------------- |
+| `Demo_Holzrahmen_fehlerhaft.ifc`   | IFC4        | Negativer Test                   |
+| `Demo_Holzrahmen_korrigiert.ifc`   | IFC4        | Positiver Test                   |
+| `Team_5_BIMcollab_Example_STR.ifc` | IFC2X3      | Zusätzlicher Test mit 114 Wänden |
 
-Dieses Modell befindet sich im Ordner `models/`.
+Die beiden IFC4-Lehrmodelle stammen aus den Unterrichtsunterlagen und werden automatisch heruntergeladen.
 
-Für die technische Prüfung haben wir zwei IFC4-Lehrmodelle aus den Unterrichtsunterlagen verwendet:
+Das BIMcollab-Modell befindet sich in unserem GitHub-Repository unter `models/`.
 
-| Modell                           | Verwendung     |
-| -------------------------------- | -------------- |
-| `Demo_Holzrahmen_fehlerhaft.ifc` | Negativer Test |
-| `Demo_Holzrahmen_korrigiert.ifc` | Positiver Test |
+Mit dem IFC2X3-Modell konnten wir untersuchen, ob unsere Prüfregel auch bei einer anderen IFC-Version und einem anderen Datenpfad funktioniert.
 
-Die beiden Lehrmodelle werden vom Notebook automatisch heruntergeladen.
-
-**Wichtig:** Unser ursprüngliches IFC2X3-Modell wurde bisher noch nicht mit diesem Check geprüft.
-
-Bei IFC2X3 kann die Wanddicke beispielsweise unter `BaseQuantities.Width` gespeichert sein. Dies muss vor einer Anwendung auf unser Arbeitsmodell untersucht werden.
+Das BIMcollab-Beispielmodell ist allerdings kein nachgewiesenes Holzrahmenbaumodell.
 
 Weitere Angaben zu den Modellquellen stehen in `models/README.md`.
 
 ## 5. Validierung und Ergebnisse
 
-Wir haben unseren Check am **27.10.2026** in Google Colab getestet.
+Wir haben die Wanddickenprüfung mit beiden IFC-Versionen in Google Colab getestet.
 
-Für beide Modelle wurde dieselbe Wand mit derselben Prüfregel untersucht.
+### 5.1 Test 1 – IFC4-Lehrmodelle
 
-**GlobalId der geprüften Wand:**
+Den ersten Test haben wir am **27.10.2026** durchgeführt.
+
+Bei beiden Modellen wurde dieselbe Wand mit derselben Prüfregel untersucht.
+
+**GlobalId:**
 
 `2ucZRLBGP4uxZW$9i1VAZ8`
-
-### Testergebnisse
 
 | Kriterium      | Negativer Test | Positiver Test |
 | -------------- | -------------- | -------------- |
@@ -129,33 +136,63 @@ Für beide Modelle wurde dieselbe Wand mit derselben Prüfregel untersucht.
 
 Der negative Test wurde korrekt als fehlerhaft erkannt. Der positive Test hat die Prüfung bestanden.
 
-Damit konnten wir zeigen, dass unser Check bei den beiden Lehrmodellen zwischen einer ungültigen und einer positiven Wanddicke unterscheidet.
+Damit konnten wir zeigen, dass unser Check zwischen einer ungültigen und einer positiven Wanddicke unterscheidet.
 
-### Ausgabe
+### 5.2 Test 2 – IFC2X3-BIMcollab-Modell
 
-Die Ergebnisse werden als CSV-Dateien gespeichert:
+Am **28.10.2026** haben wir den Check zusätzlich auf unser ursprüngliches IFC2X3-Modell übertragen.
+
+Dabei wurde die Wanddicke über `BaseQuantities.Width` ausgelesen.
+
+**Ergebnisse:**
+
+| Ergebnis       | Anzahl |
+| -------------- | -----: |
+| Geprüfte Wände |    114 |
+| Bestanden      |    114 |
+| Durchgefallen  |      0 |
+| Fehlende Werte |      0 |
+
+Die Wanddicken verteilen sich wie folgt:
+
+| Wanddicke |  Anzahl |
+| --------- | ------: |
+| 10 cm     |     102 |
+| 37 cm     |      12 |
+| **Total** | **114** |
+
+Alle 114 Wände erfüllen die Anforderung `Width > 0 m`.
+
+Dieser Test zeigt, dass wir unsere Prüfregel auch auf ein IFC2X3-Modell übertragen konnten.
+
+Da alle Wanddicken positiv sind, enthält dieses Modell keinen negativen Testfall. Die Überprüfung einer fehlerhaften Wanddicke haben wir bereits mit den IFC4-Lehrmodellen durchgeführt.
+
+### 5.3 Gespeicherte Ergebnisse
+
+Die Ergebnisse wurden als CSV-Dateien gespeichert:
 
 * `results/Team_5_A2_Wanddicke_negativ.csv`
 * `results/Team_5_A2_Wanddicke_positiv.csv`
+* `results/Team_5_A2_IFC2X3_original.csv`
 
-Die Dateien enthalten unter anderem die GlobalId, den geprüften Wert, die Prüfregel, das Ergebnis und die Begründung.
+Die Dateien enthalten unter anderem die GlobalId, den geprüften Wert, die Prüfregel und das Ergebnis.
 
-Zusätzlich werden das verwendete Modell, die Softwareversion und der Prüfzeitpunkt dokumentiert.
+Zusätzlich werden Informationen zum verwendeten Modell und zur Softwareversion dokumentiert.
 
 ## 6. Grenzen und nächste Schritte
 
-Unser MVP funktioniert mit den beiden verwendeten IFC4-Lehrmodellen.
+Mit unserem MVP haben wir die Wanddickenprüfung an IFC4- und IFC2X3-Modellen erfolgreich getestet.
 
 Dabei gibt es noch folgende Einschränkungen:
 
 * Bisher wird nur die Wanddicke (A2) automatisiert geprüft.
 * Die Anforderungen A1 und A3 sind noch nicht umgesetzt.
-* Die Prüfung wurde noch nicht auf unser ursprüngliches IFC2X3-Modell übertragen.
+* Das BIMcollab-Modell ist kein nachgewiesenes Holzrahmenbaumodell.
 * Der Check prüft nur, ob die Wanddicke positiv ist. Ob die Dicke konstruktiv sinnvoll ist, wird nicht bewertet.
 
 In einem nächsten Schritt möchten wir die Wandbezeichnung und Materialzuordnung ebenfalls automatisch prüfen.
 
-Ausserdem soll der Check auf weitere IFC-Modelle angewendet werden können.
+Ausserdem möchten wir untersuchen, wie sich die Prüflogik auf weitere IFC-Modelle übertragen lässt.
 
 ---
 
