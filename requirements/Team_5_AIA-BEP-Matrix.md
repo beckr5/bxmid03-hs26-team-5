@@ -61,7 +61,7 @@ Die CSV-Dateien befinden sich im Ordner `results/`.
 
 Die Anforderungen A1 und A3 sind bisher nur definiert und noch nicht automatisiert umgesetzt.
 
-Ausserdem wurde unser ursprüngliches IFC2X3-Arbeitsmodell noch nicht mit dem aktuellen Check geprüft.
+Zusätzlich haben wir die Prüfregel A2 auf unser IFC2X3-BIMcollab-Modell übertragen. Alle 114 geprüften Wände haben den Check bestanden.
 
 Diese Punkte möchten wir in der weiteren Projektbearbeitung angehen.
 
