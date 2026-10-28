@@ -1,129 +1,69 @@
 # IFC-Modelle – Team 5
 
-## 1. Übersicht
+In unserem Projekt verwenden wir drei IFC-Modelle, um die automatische Wanddickenprüfung zu testen.
 
-Im Projekt «Automatisierte Qualitätsprüfung von Holzrahmenbauwänden in IFC-Modellen» werden verschiedene IFC-Modelle für die Untersuchung und Validierung der Informationsanforderungen verwendet.
+## 1. Verwendete Modelle
 
-Dabei wird zwischen dem ursprünglichen Arbeitsmodell von Team 5 und den beiden Testmodellen für den automatisierten Wanddickencheck unterschieden.
+| Modell                             | IFC-Version | Verwendung          |
+| ---------------------------------- | ----------- | ------------------- |
+| `Team_5_BIMcollab_Example_STR.ifc` | IFC2X3      | Test mit 114 Wänden |
+| `Demo_Holzrahmen_fehlerhaft.ifc`   | IFC4        | Negativer Test      |
+| `Demo_Holzrahmen_korrigiert.ifc`   | IFC4        | Positiver Test      |
 
-| Modell                             | IFC-Version | Verwendung                   |
-| ---------------------------------- | ----------- | ---------------------------- |
-| `Team_5_BIMcollab_Example_STR.ifc` | IFC2X3      | Ursprüngliches Arbeitsmodell |
-| `Demo_Holzrahmen_fehlerhaft.ifc`   | IFC4        | Negativer Testfall           |
-| `Demo_Holzrahmen_korrigiert.ifc`   | IFC4        | Positiver Testfall           |
+## 2. Unser BIMcollab-Arbeitsmodell
 
-## 2. Ursprüngliches Arbeitsmodell
+Das Modell `Team_5_BIMcollab_Example_STR.ifc` befindet sich direkt im Ordner `models/`.
 
-**Dateiname:** `Team_5_BIMcollab_Example_STR.ifc`
+Wir haben darin **114 Wandobjekte** mit unserem IFC2X3-Notebook geprüft.
 
-**IFC-Version:** IFC2X3
+Die Wanddicken werden über `BaseQuantities.Width` ausgelesen.
 
-**Speicherort:** `models/Team_5_BIMcollab_Example_STR.ifc`
+| Wanddicke |  Anzahl |
+| --------- | ------: |
+| 10 cm     |     102 |
+| 37 cm     |      12 |
+| **Total** | **114** |
 
-Das Modell wurde von Team 5 für die Untersuchung von Wandbauteilen und deren IFC-Informationen bereitgestellt.
+Alle Wände erfüllen unsere Prüfregel `Width > 0 m`.
 
-Untersucht werden insbesondere:
+Das Modell ist ein allgemeines Tragwerksbeispiel und kein nachgewiesenes Holzrahmenbaumodell.
 
-* Wandbezeichnungen (`Name`)
-* Wanddicken (`Width`)
-* Materialzuordnungen
+**Offen:** Die ursprüngliche Modellquelle und die Veröffentlichungsrechte müssen wir noch bestätigen.
 
-Das Modell ist im GitHub-Repository von Team 5 gespeichert.
+## 3. IFC4-Lehrmodelle
 
-**Hinweis:** Der aktuelle automatisierte Wanddickencheck wurde noch nicht auf diesem Modell ausgeführt. Die Anpassung und Validierung der Prüflogik für das IFC2X3-Modell ist ein weiterer Entwicklungsschritt.
+Die beiden IFC4-Modelle stammen aus den Unterrichtsunterlagen.
 
-**Originalquelle und Veröffentlichungsrechte:** Noch durch das Team zu dokumentieren beziehungsweise zu bestätigen.
+Wir verwenden sie, um einen positiven und einen negativen Testfall mit derselben Wand und derselben Prüfregel durchzuführen.
 
-## 3. IFC-Lehrmodelle für das MVP 0.1
-
-Für den automatisierten Qualitätscheck der Anforderung A2 wurden zwei IFC4-Lehrmodelle verwendet.
-
-### Negativer Testfall
-
-**Dateiname:** `Demo_Holzrahmen_fehlerhaft.ifc`
-
-**IFC-Version:** IFC4
-
-**Geprüfte Wanddicke:** 0 m
-
-**Prüfregel:** `Qto_WallBaseQuantities.Width > 0 m`
-
-**Ergebnis:** DURCHGEFALLEN
-
-### Positiver Testfall
-
-**Dateiname:** `Demo_Holzrahmen_korrigiert.ifc`
-
-**IFC-Version:** IFC4
-
-**Geprüfte Wanddicke:** 0.1143 m
-
-**Prüfregel:** `Qto_WallBaseQuantities.Width > 0 m`
-
-**Ergebnis:** BESTANDEN
-
-Beide Testfälle verwenden dieselbe Prüfregel und dieselbe Objektauswahl.
+| Testfall   | Wanddicke | Ergebnis      |
+| ---------- | --------- | ------------- |
+| Fehlerhaft | 0 m       | Durchgefallen |
+| Korrigiert | 0.1143 m  | Bestanden     |
 
 **GlobalId der geprüften Wand:**
 
 `2ucZRLBGP4uxZW$9i1VAZ8`
 
-## 4. Herkunft der Lehrmodelle
+Die Modelle werden vom Notebook automatisch aus dem Kurs-Repository `LTplus-AG/bxmid03-hs26` heruntergeladen.
 
-Die beiden IFC-Lehrmodelle werden über die im Unterricht verwendeten Google-Colab-Unterlagen bereitgestellt.
-
-Das Notebook bezieht die Dateien aus folgendem GitHub-Repository:
-
-`LTplus-AG/bxmid03-hs26`
-
-Der verwendete Quellenstand ist durch folgenden Commit festgelegt:
+Verwendeter Quellenstand:
 
 `b271ce09e369d73e248a3d11f7af1410d98f4eb7`
 
-**Direkte Download-Adressen:**
+Die Lehrmodelle sind deshalb nicht nochmals in unserem Repository gespeichert.
 
-Negativer Testfall:
+## 4. Ausführung und Ergebnisse
 
-https://raw.githubusercontent.com/LTplus-AG/bxmid03-hs26/b271ce09e369d73e248a3d11f7af1410d98f4eb7/modelle/Demo_Holzrahmen_fehlerhaft.ifc
+Unsere beiden Notebooks befinden sich im Ordner `checks/`:
 
-Positiver Testfall:
+* `Team_5_Wanddickencheck.ipynb` – IFC4
+* `Team_5_IFC2X3_Wanddickencheck.ipynb` – IFC2X3
 
-https://raw.githubusercontent.com/LTplus-AG/bxmid03-hs26/b271ce09e369d73e248a3d11f7af1410d98f4eb7/modelle/Demo_Holzrahmen_korrigiert.ifc
+Die zugehörigen CSV-Dateien sind im Ordner `results/` gespeichert.
 
-Die Lehrmodelle werden nicht zusätzlich im Team-Repository gespeichert.
-
-## 5. Reproduzierbarkeit
-
-Der automatisierte Check befindet sich unter:
-
-`checks/Team_5_Wanddickencheck.ipynb`
-
-Beim Ausführen in Google Colab werden die beiden Lehrmodelle automatisch heruntergeladen.
-
-Ein manueller Upload ist nicht erforderlich.
-
-Zur Identifikation der verwendeten Dateien werden SHA-256-Prüfsummen dokumentiert.
-
-| Modell     | SHA-256                                                            |
-| ---------- | ------------------------------------------------------------------ |
-| Fehlerhaft | `688c3ff8258fb025accf7e8b286c49fe0e202974b7af29940adccf82c0886c0a` |
-| Korrigiert | `2b4fcea90e9dc25dbbb4491496205ac1d5112585a8eacd04f8177642b51d06d6` |
-
-Die tatsächlich erzeugten Prüfergebnisse befinden sich im Ordner `results/`.
-
-## 6. Grenzen
-
-Der aktuelle MVP-Check wurde ausschliesslich anhand der beiden IFC4-Lehrmodelle validiert.
-
-Die Übertragbarkeit auf weitere IFC-Modelle muss separat überprüft werden.
-
-Insbesondere müssen beim ursprünglichen IFC2X3-Arbeitsmodell die relevanten Wandobjekte, Quantity-Bezeichnungen und Datenpfade untersucht werden.
-
-Ein erfolgreich bestandener Wanddickencheck bestätigt, dass die definierte Informationsanforderung erfüllt ist. Er bestätigt nicht automatisch die konstruktive Richtigkeit einer Wand.
+Die Anleitung zur Ausführung steht in der zentralen `README.md`.
 
 ---
 
-**Projekt:** Automatisierte Qualitätsprüfung von Holzrahmenbauwänden
-**Team:** 5
-**Modul:** Data Management & BIM
-**Stand:** 28.10.2026
+**Team 5 – Data Management & BIM**
