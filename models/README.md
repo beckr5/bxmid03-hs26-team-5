@@ -28,8 +28,6 @@ Alle Wände erfüllen unsere Prüfregel `Width > 0 m`.
 
 Das Modell ist ein allgemeines Tragwerksbeispiel und kein nachgewiesenes Holzrahmenbaumodell.
 
-**Offen:** Die ursprüngliche Modellquelle und die Veröffentlichungsrechte müssen wir noch bestätigen.
-
 ## 3. IFC4-Lehrmodelle
 
 Die beiden IFC4-Modelle stammen aus den Unterrichtsunterlagen.
