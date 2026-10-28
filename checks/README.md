@@ -1,15 +1,18 @@
-# Automatisierter Wanddickencheck – Team 5
+# Automatisierte Wanddickenprüfung – Team 5
 
-In diesem Ordner befindet sich unser Google-Colab-Notebook:
+In diesem Ordner befinden sich unsere beiden Google-Colab-Notebooks.
 
-`Team_5_Wanddickencheck.ipynb`
+| Notebook                              | Verwendung                                         |
+| ------------------------------------- | -------------------------------------------------- |
+| `Team_5_Wanddickencheck.ipynb`        | Positiver und negativer Test mit IFC4-Lehrmodellen |
+| `Team_5_IFC2X3_Wanddickencheck.ipynb` | Prüfung von 114 Wänden im BIMcollab-Modell         |
 
-Das Notebook prüft die Wanddicke von ausgewählten IFC-Wänden.
+Beide Notebooks wurden mit Python und IfcOpenShell erstellt.
 
-**Prüfregel A2:** `Qto_WallBaseQuantities.Width > 0 m`
+**Unsere Prüfregel A2:** Wanddicke > 0 m.
 
-Für den Test werden zwei IFC4-Lehrmodelle automatisch heruntergeladen.
+Bei den IFC4-Modellen lesen wir die Wanddicke über `Qto_WallBaseQuantities.Width` aus, beim IFC2X3-Modell über `BaseQuantities.Width`.
 
-Der Check wurde mit Python und IfcOpenShell erstellt und anhand eines positiven und eines negativen Testfalls erfolgreich getestet.
+Beide Tests wurden erfolgreich in Google Colab durchgeführt.
 
-Die Anleitung zur Ausführung steht in der zentralen `README.md`.
+Die Ausführungsanleitung befindet sich in der zentralen `README.md`.
