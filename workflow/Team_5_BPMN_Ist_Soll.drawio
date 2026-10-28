@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-28T09:51:52Z" agent="Data Management &amp; BIM Team 5" version="24.7.17" type="device" pages="2">
+  <diagram id="ist" name="Istprozess">
+    <mxGraphModel dx="1750" dy="890" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="920" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Istprozess – manuelle Wandprüfung" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=29;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="34" width="1610" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="sub" value="Ausgangspunkt: Wandinformationen werden manuell anhand einer Prüfliste kontrolliert." style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#546472;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="88" width="1400" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFBFC;strokeColor=#ADB7BF;strokeWidth=1.0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="155" width="1718" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="head_0" value="Auftraggeber" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF4F7;strokeColor=#ADB7BF;strokeWidth=1.0;align=center;verticalAlign=middle;fontFamily=Arial;fontStyle=1;fontColor=#2F3C48;fontSize=16;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="155" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADB7BF;strokeWidth=1.0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="315" width="1718" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="head_1" value="Informations-&lt;br&gt;management" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF4F7;strokeColor=#ADB7BF;strokeWidth=1.0;align=center;verticalAlign=middle;fontFamily=Arial;fontStyle=1;fontColor=#2F3C48;fontSize=16;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="315" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFBFC;strokeColor=#ADB7BF;strokeWidth=1.0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="475" width="1718" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="head_2" value="Fachplanung /&lt;br&gt;Modellautor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF4F7;strokeColor=#ADB7BF;strokeWidth=1.0;align=center;verticalAlign=middle;fontFamily=Arial;fontStyle=1;fontColor=#2F3C48;fontSize=16;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="475" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADB7BF;strokeWidth=1.0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="635" width="1718" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="head_3" value="Prüfung" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF4F7;strokeColor=#ADB7BF;strokeWidth=1.0;align=center;verticalAlign=middle;fontFamily=Arial;fontStyle=1;fontColor=#2F3C48;fontSize=16;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="635" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="219" y="219" width="36" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="start_caption" value="Bedarf vor&lt;br&gt;Werkplanung" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="192" y="265" width="102" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_aia" value="Anforderungen&lt;br&gt;festlegen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="310" y="206" width="153" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="aia" value="AIA" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="351" y="281" width="70" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_rules" value="Anforderungen&lt;br&gt;weitergeben" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="504" y="367" width="151" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rules_caption" value="Prüfliste" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="440" width="160" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_model" value="Modell erstellen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="691" y="526" width="147" height="59" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_ifc" value="IFC übergeben" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="891" y="526" width="148" height="59" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_check" value="Wände prüfen&lt;br&gt;(manuell)" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="892" y="688" width="149" height="59" as="geometry"/>
+        </mxCell>
+        <mxCell id="check_caption" value="Prüfliste" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="891" y="764" width="152" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="gateway" value="X" style="rhombus;whiteSpace=wrap;html=1;aspect=fixed;fontFamily=Arial;fontStyle=1;fontSize=18;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.8;" vertex="1" parent="1">
+          <mxGeometry x="1138" y="687" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="question" value="Angaben vollständig?" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1207" y="645" width="270" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_yes" value="Bericht erstellen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1221" y="369" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_no" value="Befunde melden" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1324" y="688" width="157" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_request" value="Korrektur&lt;br&gt;beauftragen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1514" y="369" width="154" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_fix" value="Modell korrigieren" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1517" y="527" width="151" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_approve" value="Modell freigeben" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1413" y="207" width="155" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="1706" y="219" width="36" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_caption" value="Freigabe" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1673" y="264" width="103" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="yes" value="Ja" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#16704D;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1194" y="425" width="45" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="no" value="Nein" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#A04B44;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1244" y="718" width="66" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="ifc_note" value="IFC" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1044" y="559" width="60" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="corr_note" value="IFC" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1259" y="593" width="64" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="finding_note" value="Befund" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1551" y="625" width="115" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_1" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="start" target="task_aia">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_2" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_aia" target="task_rules">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="579" y="236"/>
+              <mxPoint x="579" y="350"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_3" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_rules" target="task_model">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="762" y="397"/>
+              <mxPoint x="762" y="511"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_4" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_model" target="task_ifc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_5" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_ifc" target="task_check">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="965" y="615"/>
+              <mxPoint x="967" y="674"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_6" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_check" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_yes" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gateway" target="task_yes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1168" y="397"/>
+              <mxPoint x="1202" y="397"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_7" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_yes" target="task_approve">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1296" y="236"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_8" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_approve" target="end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_no" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gateway" target="task_no">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_9" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_no" target="task_request">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1720" y="718"/>
+              <mxPoint x="1720" y="399"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_10" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_request" target="task_fix">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_11" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_fix" target="task_ifc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1470" y="556"/>
+              <mxPoint x="1470" y="625"/>
+              <mxPoint x="863" y="625"/>
+              <mxPoint x="863" y="555"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note" value="&lt;b&gt;Ist:&lt;/b&gt; Die Wandinformationen werden manuell geprüft. Bei Mängeln geht das Modell zur Korrektur zurück." style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#546472;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="821" width="1650" height="44" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="soll_A2" name="Sollprozess – A2 (MVP)">
+    <mxGraphModel dx="1750" dy="890" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="920" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Sollprozess – automatisierte Wanddickenprüfung A2 (MVP 0.1)" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=29;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="34" width="1610" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="sub" value="Umgesetzt im MVP: Prüfung der Wanddicke mit Python / IfcOpenShell und CSV-Ausgabe" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#546472;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="89" width="1320" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend_b" value="Automatisiert im MVP" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=#DCEEFF;strokeColor=#3479AF;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1477" y="101" width="240" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFBFC;strokeColor=#ADB7BF;strokeWidth=1.0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="155" width="1718" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="head_0" value="Auftraggeber" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF4F7;strokeColor=#ADB7BF;strokeWidth=1.0;align=center;verticalAlign=middle;fontFamily=Arial;fontStyle=1;fontColor=#2F3C48;fontSize=16;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="155" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADB7BF;strokeWidth=1.0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="315" width="1718" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="head_1" value="Informations-&lt;br&gt;management" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF4F7;strokeColor=#ADB7BF;strokeWidth=1.0;align=center;verticalAlign=middle;fontFamily=Arial;fontStyle=1;fontColor=#2F3C48;fontSize=16;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="315" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFBFC;strokeColor=#ADB7BF;strokeWidth=1.0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="475" width="1718" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="head_2" value="Fachplanung /&lt;br&gt;Modellautor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF4F7;strokeColor=#ADB7BF;strokeWidth=1.0;align=center;verticalAlign=middle;fontFamily=Arial;fontStyle=1;fontColor=#2F3C48;fontSize=16;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="475" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#ADB7BF;strokeWidth=1.0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="635" width="1718" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="head_3" value="Prüfung" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EFF4F7;strokeColor=#ADB7BF;strokeWidth=1.0;align=center;verticalAlign=middle;fontFamily=Arial;fontStyle=1;fontColor=#2F3C48;fontSize=16;spacing=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="635" width="150" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="start" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="219" y="219" width="36" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="start_caption" value="Bedarf vor&lt;br&gt;Werkplanung" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="192" y="265" width="102" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_aia" value="Anforderungen&lt;br&gt;festlegen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="310" y="206" width="153" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="aia" value="AIA" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="351" y="281" width="70" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_rules" value="Prüfregel A2&lt;br&gt;festlegen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="504" y="367" width="151" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rules_caption" value="BEP / Prüfregel A2" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="440" width="160" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_model" value="Modell erstellen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="691" y="526" width="147" height="59" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_ifc" value="IFC übergeben" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="891" y="526" width="148" height="59" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_check" value="Wanddicke prüfen&lt;br&gt;(automatisch)" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#2F3C48;fillColor=#DCEEFF;strokeColor=#3479AF;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="892" y="688" width="149" height="59" as="geometry"/>
+        </mxCell>
+        <mxCell id="check_caption" value="Python / IfcOpenShell" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="891" y="764" width="152" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="gateway" value="X" style="rhombus;whiteSpace=wrap;html=1;aspect=fixed;fontFamily=Arial;fontStyle=1;fontSize=18;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.8;" vertex="1" parent="1">
+          <mxGeometry x="1138" y="687" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="question" value="Wanddicke &gt; 0 m?" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1207" y="645" width="270" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_yes" value="CSV-Bericht&lt;br&gt;ablegen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#2F3C48;fillColor=#DCEEFF;strokeColor=#3479AF;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1221" y="369" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_no" value="Fehler im CSV&lt;br&gt;dokumentieren" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#2F3C48;fillColor=#DCEEFF;strokeColor=#3479AF;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1324" y="688" width="157" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_request" value="Korrektur&lt;br&gt;beauftragen" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1514" y="369" width="154" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_fix" value="Modell korrigieren" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1517" y="527" width="151" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_approve" value="Modell freigeben" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#2F3C48;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=1.5;spacing=7;" vertex="1" parent="1">
+          <mxGeometry x="1413" y="207" width="155" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="end" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#2F3C48;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="1706" y="219" width="36" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_caption" value="Freigabe" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1673" y="264" width="103" height="29" as="geometry"/>
+        </mxCell>
+        <mxCell id="yes" value="Ja" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#16704D;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1194" y="425" width="45" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="no" value="Nein" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#A04B44;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1244" y="718" width="66" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="ifc_note" value="IFC" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1044" y="559" width="60" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="corr_note" value="IFC" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1259" y="593" width="64" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="finding_note" value="CSV-Befund" style="text;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontStyle=1;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1551" y="625" width="115" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_1" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="start" target="task_aia">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_2" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_aia" target="task_rules">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="579" y="236"/>
+              <mxPoint x="579" y="350"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_3" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_rules" target="task_model">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="762" y="397"/>
+              <mxPoint x="762" y="511"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_4" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_model" target="task_ifc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_5" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_ifc" target="task_check">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="965" y="615"/>
+              <mxPoint x="967" y="674"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_6" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_check" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_yes" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gateway" target="task_yes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1168" y="397"/>
+              <mxPoint x="1202" y="397"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_7" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_yes" target="task_approve">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1296" y="236"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_8" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_approve" target="end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_no" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gateway" target="task_no">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_9" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_no" target="task_request">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1720" y="718"/>
+              <mxPoint x="1720" y="399"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow_10" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_request" target="task_fix">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow_11" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;startArrow=none;endArrow=block;endFill=1;endSize=8;strokeColor=#2F3C48;strokeWidth=1.6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="task_fix" target="task_ifc">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1470" y="556"/>
+              <mxPoint x="1470" y="625"/>
+              <mxPoint x="863" y="625"/>
+              <mxPoint x="863" y="555"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note_box" value="" style="rounded=1;arcSize=9;whiteSpace=wrap;html=1;fillColor=#FFF9E8;strokeColor=#E0C988;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="822" width="1718" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="&lt;b&gt;Abgrenzung:&lt;/b&gt; Automatisiert sind bisher die A2-Prüfung und der CSV-Export. Rückmeldung, Modellkorrektur und Freigabe sind vorgesehene Prozessschritte; BCF ist eine mögliche spätere Erweiterung." style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontStyle=0;fontColor=#2F3C48;fillColor=none;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="59" y="831" width="1680" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
