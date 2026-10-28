@@ -8,13 +8,11 @@
 
 ## 1. Projektidee und Ziel
 
-Bei der Planung von Holzrahmenbauwänden müssen verschiedene Informationen im BIM-Modell vorhanden sein. Fehlen beispielsweise Wandbezeichnungen, Wanddicken oder Materialangaben, kann dies bei der Werkplanung zu Problemen führen.
+Bei der Planung von Holzrahmenbauwänden müssen wichtige Informationen im BIM-Modell vorhanden sein. Fehlende Wandbezeichnungen, Wanddicken oder Materialangaben können bei der Werkplanung zu Problemen führen.
 
-Mit unserem Projekt möchten wir prüfen, wie sich solche Informationen in einem IFC-Modell automatisch kontrollieren lassen.
+Wir möchten untersuchen, wie sich solche Informationen in IFC-Modellen automatisch prüfen lassen.
 
-Der Check soll vor allem die Holzbauplanung, Arbeitsvorbereitung und BIM-Koordination unterstützen.
-
-Für unser erstes MVP haben wir uns auf die **automatische Prüfung der Wanddicke** konzentriert.
+Für unser erstes MVP haben wir die **automatische Prüfung der Wanddicke** umgesetzt.
 
 ## 2. Unsere drei Anforderungen
 
@@ -23,153 +21,146 @@ Wir haben folgende Informationsanforderungen definiert:
 | ID | Anforderung       | Prüfregel                    | Status    |
 | -- | ----------------- | ---------------------------- | --------- |
 | A1 | Wandbezeichnung   | `Name` darf nicht leer sein  | Geplant   |
-| A2 | Wanddicke         | `Width > 0`                  | Umgesetzt |
+| A2 | Wanddicke         | `Width > 0 m`                | Umgesetzt |
 | A3 | Materialzuordnung | Material muss vorhanden sein | Geplant   |
 
 Die Anforderungen sind im Ordner `requirements/` genauer beschrieben.
 
 ## 3. Verwendete IFC-Modelle
 
-Unser ursprüngliches Arbeitsmodell ist:
+Wir haben unsere Prüfung mit zwei unterschiedlichen IFC-Versionen getestet.
 
-`Team_5_BIMcollab_Example_STR.ifc` (IFC2X3)
+| IFC-Modell                         | Version | Verwendung                       |
+| ---------------------------------- | ------- | -------------------------------- |
+| `Demo_Holzrahmen_fehlerhaft.ifc`   | IFC4    | Negativer Test                   |
+| `Demo_Holzrahmen_korrigiert.ifc`   | IFC4    | Positiver Test                   |
+| `Team_5_BIMcollab_Example_STR.ifc` | IFC2X3  | Zusätzlicher Test mit 114 Wänden |
 
-Es befindet sich im Ordner `models/`.
+Die beiden IFC4-Lehrmodelle stammen aus den Unterrichtsunterlagen.
 
-Für die automatische Prüfung haben wir zwei IFC4-Lehrmodelle aus den Unterrichtsunterlagen verwendet:
+Das BIMcollab-Beispielmodell befindet sich in unserem Repository unter `models/`.
 
-| Modell                           | Verwendung     |
-| -------------------------------- | -------------- |
-| `Demo_Holzrahmen_fehlerhaft.ifc` | Negativer Test |
-| `Demo_Holzrahmen_korrigiert.ifc` | Positiver Test |
-
-Die beiden Lehrmodelle werden vom Colab-Notebook automatisch heruntergeladen.
-
-**Wichtig:** Der bisherige Check wurde mit den beiden Lehrmodellen getestet, noch nicht mit unserem ursprünglichen IFC2X3-Arbeitsmodell.
-
-Weitere Informationen zu den Modellen stehen in `models/README.md`.
+Mit dem zusätzlichen IFC2X3-Test möchten wir zeigen, dass unsere Prüflogik auch auf ein anderes IFC-Modell übertragen werden kann.
 
 ## 4. So funktioniert unser Check
 
-Wir haben einen automatisierten Wanddickencheck mit Python und IfcOpenShell erstellt.
+Wir haben die Prüfung mit **Python und IfcOpenShell** umgesetzt.
 
-Der Check läuft wie folgt ab:
+Der Ablauf ist bei beiden IFC-Versionen ähnlich:
 
 1. IFC-Modell einlesen.
-2. Relevante Wandobjekte auswählen.
-3. Wanddicke auslesen.
+2. Wandobjekte auswählen.
+3. Wanddicke auslesen und in Meter umrechnen.
 4. Wert mit der Prüfregel vergleichen.
-5. Ergebnisse als CSV-Datei ausgeben.
+5. Ergebnisse als CSV-Datei speichern.
 
-**Unsere Prüfregel A2:**
+**Unsere Prüfregel A2 lautet:**
 
-`Qto_WallBaseQuantities.Width > 0 m`
+`Wanddicke > 0 m`
 
-Geprüft werden `IfcWall`-Objekte inklusive Unterklassen mit folgendem Filter:
+Die Datenpfade und die Auswahl der Wände unterscheiden sich je nach Modell:
 
-`CH_Lehre.Scope = Holzrahmen-MVP`
+|           | IFC4-Lehrmodelle                         | IFC2X3-BIMcollab-Modell      |
+| --------- | ---------------------------------------- | ---------------------------- |
+| Objekte   | `IfcWall` inkl. Unterklassen             | `IfcWall` inkl. Unterklassen |
+| Auswahl   | Filter `CH_Lehre.Scope = Holzrahmen-MVP` | Alle Wandobjekte             |
+| Wanddicke | `Qto_WallBaseQuantities.Width`           | `BaseQuantities.Width`       |
 
-Die Wanddicke wird unter Berücksichtigung der IFC-Längeneinheit in Meter umgerechnet.
+Die Ergebnisse werden als **bestanden**, **durchgefallen** oder **fehlend** ausgegeben.
 
-Die Bewertung erfolgt so:
+Ein Wert grösser als 0 m gilt als bestanden. Fehlende, ungültige oder nicht positive Werte erfüllen unsere Anforderung nicht.
 
-| Wanddicke        | Ergebnis      |
-| ---------------- | ------------- |
-| Grösser als 0 m  | Bestanden     |
-| 0 m oder negativ | Durchgefallen |
-| Wert fehlt       | Fehlend       |
+## 5. Checks selbst ausführen
 
-Wenn keine passende Wand gefunden wird, bricht der Check mit einer Fehlermeldung ab.
+Unsere beiden Notebooks befinden sich im Ordner `checks/`.
 
-## 5. Check selbst ausführen
+### IFC4 – Positiver und negativer Test
 
-Für die Prüfung verwenden wir Google Colab.
+[Wanddickencheck IFC4 in Google Colab öffnen](https://colab.research.google.com/github/beckr5/bxmid03-hs26-team-5/blob/main/checks/Team_5_Wanddickencheck.ipynb)
 
-**Verwendete Software beim Testlauf:**
+Datei: `checks/Team_5_Wanddickencheck.ipynb`
 
-| Werkzeug     | Version     |
-| ------------ | ----------- |
-| Google Colab | Online      |
-| Python       | 3.13.18     |
-| IfcOpenShell | 0.9.0.post1 |
-| pandas       | 2.2.3       |
+Das Notebook lädt die beiden IFC4-Lehrmodelle automatisch herunter und prüft die Wanddicke mit derselben Regel.
 
-Die Python- und pandas-Versionen können bei einem späteren Colab-Lauf abweichen. IfcOpenShell wird im Notebook auf die angegebene Version festgelegt.
+### IFC2X3 – Ursprüngliches Arbeitsmodell
 
-### Schritt-für-Schritt-Anleitung
+[Wanddickencheck IFC2X3 in Google Colab öffnen](https://colab.research.google.com/github/beckr5/bxmid03-hs26-team-5/blob/main/checks/Team_5_IFC2X3_Wanddickencheck.ipynb)
 
-**1. Notebook öffnen**
+Datei: `checks/Team_5_IFC2X3_Wanddickencheck.ipynb`
 
-[Team 5 – Wanddickencheck in Google Colab öffnen](https://colab.research.google.com/github/beckr5/bxmid03-hs26-team-5/blob/main/checks/Team_5_Wanddickencheck.ipynb)
+Dieses Notebook lädt unser BIMcollab-Modell aus dem GitHub-Repository und prüft alle 114 Wandobjekte.
 
-Alternativ befindet sich das Notebook im Repository unter:
+### Ausführung
 
-`checks/Team_5_Wanddickencheck.ipynb`
+1. Gewünschtes Notebook in Google Colab öffnen.
+2. **Laufzeit → Alle ausführen** wählen.
+3. Ergebnisse kontrollieren.
+4. Die erzeugte CSV-Datei herunterladen.
 
-**2. Prüfung starten**
-
-In Google Colab auf **Laufzeit → Alle ausführen** klicken.
-
-Falls nötig, mit einem Google-Konto anmelden und die Ausführung bestätigen.
-
-**3. Automatische Verarbeitung**
-
-Das Notebook installiert die benötigten Bibliotheken, lädt die beiden Lehrmodelle herunter und prüft die Wanddicke.
-
-Die beiden Tests verwenden dieselbe Objektauswahl und dieselbe Prüfregel.
-
-**4. Ergebnisse kontrollieren**
-
-Für beide Modelle werden die geprüften Wandobjekte und ihre Ergebnisse angezeigt.
-
-Am Ende kontrolliert das Notebook automatisch, ob der negative Test durchfällt und der positive Test besteht.
-
-**5. Ergebnisse herunterladen**
-
-Das Notebook erstellt folgende Dateien:
-
-* `Team_5_A2_Wanddicke_negativ.csv`
-* `Team_5_A2_Wanddicke_positiv.csv`
-
-Beide Dateien werden als ZIP-Datei zum Herunterladen bereitgestellt.
+Für die Ausführung verwenden wir IfcOpenShell `0.9.0.post1` und pandas.
 
 ## 6. Unsere Testergebnisse
 
-Wir haben den Check am **27.10.2026** in Google Colab ausgeführt.
+### Test 1 – IFC4-Lehrmodelle
 
-| Kriterium      | Negativer Test | Positiver Test |
-| -------------- | -------------- | -------------- |
-| Geprüfte Wände | 1              | 1              |
-| Wanddicke      | 0 m            | 0.1143 m       |
-| Prüfregel      | Width > 0 m    | Width > 0 m    |
-| Ergebnis       | Durchgefallen  | Bestanden      |
+Der erste Check wurde am **27.10.2026** durchgeführt.
 
-**GlobalId der geprüften Wand:**
+| Testfall            | Wanddicke | Ergebnis      |
+| ------------------- | --------- | ------------- |
+| Fehlerhaftes Modell | 0 m       | Durchgefallen |
+| Korrigiertes Modell | 0.1143 m  | Bestanden     |
 
-`2ucZRLBGP4uxZW$9i1VAZ8`
+Bei beiden Tests wurde dieselbe Wand mit derselben Prüfregel kontrolliert.
 
-Bei beiden Tests wurde dieselbe Wand mit derselben Prüfregel kontrolliert. Nur die Wanddicke wurde im Testmodell verändert.
+**GlobalId:** `2ucZRLBGP4uxZW$9i1VAZ8`
 
-Die Ergebnisse zeigen, dass unser Check eine ungültige Wanddicke erkennt und eine positive Wanddicke akzeptiert.
+### Test 2 – IFC2X3-BIMcollab-Modell
 
-Die tatsächlichen CSV-Ergebnisse sind im Ordner `results/` gespeichert. Sie enthalten unter anderem die GlobalId, den Ist-Wert, die Prüfregel, das Ergebnis und eine Begründung.
+Zusätzlich haben wir unsere Wanddickenprüfung am **28.10.2026** auf das ursprüngliche IFC2X3-Modell übertragen.
+
+| Ergebnis       | Anzahl |
+| -------------- | -----: |
+| Geprüfte Wände |    114 |
+| Bestanden      |    114 |
+| Durchgefallen  |      0 |
+| Fehlende Werte |      0 |
+
+Die Wanddicken verteilen sich wie folgt:
+
+| Wanddicke |  Anzahl |
+| --------- | ------: |
+| 10 cm     |     102 |
+| 37 cm     |      12 |
+| **Total** | **114** |
+
+Alle 114 Wandobjekte erfüllen unsere Prüfregel `Width > 0 m`.
+
+### Gespeicherte Ergebnisse
+
+Die CSV-Dateien liegen im Ordner `results/`:
+
+* `Team_5_A2_Wanddicke_negativ.csv`
+* `Team_5_A2_Wanddicke_positiv.csv`
+* `Team_5_A2_IFC2X3_original.csv`
+
+Die Dateien enthalten unter anderem die GlobalId, die geprüfte Wanddicke, die Prüfregel und das Ergebnis.
 
 ## 7. Grenzen und nächste Schritte
 
-Unser erster Check funktioniert mit den beiden IFC4-Lehrmodellen.
+Mit unserem MVP haben wir die Wanddickenprüfung erfolgreich an IFC4- und IFC2X3-Modellen getestet.
 
-Aktuell gibt es aber noch einige Einschränkungen:
+Es gibt aber noch einige Einschränkungen:
 
-* Bisher wird nur die Wanddicke (A2) geprüft.
+* Bisher ist nur die Anforderung A2 automatisiert umgesetzt.
 * Die Wandbezeichnung (A1) und Materialzuordnung (A3) sind noch nicht automatisiert.
-* Unser ursprüngliches IFC2X3-Modell wurde noch nicht mit diesem Check getestet.
-* Eine positive Wanddicke bedeutet nicht automatisch, dass die Wand konstruktiv richtig aufgebaut ist.
+* Das BIMcollab-Beispielmodell ist kein nachgewiesenes Holzrahmenbaumodell.
+* Eine positive Wanddicke bedeutet nicht automatisch, dass eine Wand konstruktiv richtig aufgebaut ist.
 
-Als Nächstes möchten wir den Check auf weitere Wandinformationen und unser ursprüngliches Arbeitsmodell erweitern.
+Als Nächstes möchten wir weitere Anforderungen prüfen und die Lösung für zusätzliche IFC-Modelle erweitern.
 
-Die technische Spezifikation, die AIA-BEP-Matrix und der Ist-/Sollprozess befinden sich in den Ordnern `requirements/` und `workflow/`.
+Die Spezifikation und AIA-BEP-Matrix befinden sich in `requirements/`. Der Ist- und Sollprozess liegt in `workflow/`.
 
-Die Verwendung von KI während der Projektbearbeitung ist in `KI_USAGE.md` dokumentiert.
+Unsere KI-Nutzung haben wir in `KI_USAGE.md` dokumentiert.
 
 ---
 
