@@ -45,13 +45,13 @@ Beide Testfälle wurden mit derselben Prüfregel durchgeführt.
 
 Die Ergebnisse werden als CSV-Dateien gespeichert und enthalten unter anderem die GlobalId der geprüften Wand.
 
-Unser ursprüngliches IFC2X3-Arbeitsmodell wurde mit diesem Check noch nicht geprüft.
+Zusätzlich haben wir unseren Wanddickencheck auf das ursprüngliche IFC2X3-Arbeitsmodell übertragen. Dabei haben alle 114 geprüften Wände die Anforderung erfüllt.
 
 ## 5. Weitere Entwicklung
 
 Als Nächstes möchten wir auch die Wandbezeichnung (A1) und die Materialzuordnung (A3) automatisch prüfen.
 
-Ausserdem möchten wir den Check auf unser ursprüngliches IFC-Modell übertragen.
+Ausserdem möchten wir die Prüfung auf weitere IFC-Modelle übertragen und zusätzliche Anforderungen umsetzen.
 
 ## 6. Verworfene Ideen
 
