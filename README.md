@@ -12,6 +12,8 @@ Bei der Planung von Holzrahmenbauwänden müssen wichtige Informationen im BIM-M
 
 Wir möchten untersuchen, wie sich solche Informationen in IFC-Modellen automatisch prüfen lassen.
 
+Der Check richtet sich hauptsächlich an die Holzbauplanung, Arbeitsvorbereitung und BIM-Koordination.
+
 Für unser erstes MVP haben wir die **automatische Prüfung der Wanddicke** umgesetzt.
 
 ## 2. Unsere drei Anforderungen
@@ -60,7 +62,7 @@ Der Ablauf ist bei beiden IFC-Versionen ähnlich:
 
 Die Datenpfade und die Auswahl der Wände unterscheiden sich je nach Modell:
 
-|           | IFC4-Lehrmodelle                         | IFC2X3-BIMcollab-Modell      |
+| Kriterium | IFC4-Lehrmodelle                         | IFC2X3-BIMcollab-Modell      |
 | --------- | ---------------------------------------- | ---------------------------- |
 | Objekte   | `IfcWall` inkl. Unterklassen             | `IfcWall` inkl. Unterklassen |
 | Auswahl   | Filter `CH_Lehre.Scope = Holzrahmen-MVP` | Alle Wandobjekte             |
