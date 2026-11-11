@@ -168,3 +168,97 @@ Unsere KI-Nutzung haben wir in `KI_USAGE.md` dokumentiert.
 
 **Team 5 – Data Management & BIM**
 **GitHub:** https://github.com/beckr5/bxmid03-hs26-team-5
+
+
+
+
+
+
+
+
+
+Team 5 – Automatisierte Qualitätsprüfung von Holzrahmenbauwänden
+Modul: Data Management & BIM – BFH  
+Team: 5  
+Version: MVP 0.1  
+Stand: 11.11.2026
+1. Projektidee und Ziel
+Bei der Planung von Holzrahmenbauwänden müssen wichtige Informationen im BIM-Modell vorhanden sein. Fehlende Wandbezeichnungen, Wanddicken oder Materialangaben können bei der Werkplanung zu Problemen führen.
+Wir möchten untersuchen, wie sich diese Informationen automatisch prüfen lassen. Der Check richtet sich an die Holzbauplanung, Arbeitsvorbereitung und BIM-Koordination.
+Für unser erstes MVP haben wir die automatische Prüfung der Wanddicke mit Python und IfcOpenShell umgesetzt. Als Arbeitsmodell verwenden wir das BIMcollab-Beispielmodell. Damit prüfen wir zunächst die allgemeine Wanddickenprüfung; das Modell ist kein nachgewiesenes Holzrahmenbaumodell.
+2. Unsere drei Anforderungen
+ID	Anforderung	Prüfregel	Status
+A1	Wandbezeichnung	`Name` darf nicht leer sein	Geplant
+A2	Wanddicke	`Width > 0 m`	Umgesetzt
+A3	Materialzuordnung	Material muss vorhanden sein	Geplant
+Die Anforderungen sind im Ordner `requirements/` genauer beschrieben.
+3. Verwendetes IFC-Modell
+Wir verwenden ausschliesslich das folgende Modell aus unseren Projektquellen:
+IFC-Modell	IFC-Schema	Verwendung
+`Team\_5\_BIMcollab\_Example\_STR.ifc`	IFC2X3	Arbeitsmodell für die Wanddickenprüfung mit 114 Wänden
+Die Datei liegt im Repository unter `models/Team\_5\_BIMcollab\_Example\_STR.ifc`.
+Das unten verlinkte Notebook lädt eine festgelegte Version dieser Datei aus dem Team-Repository. Die SHA-256-Prüfsumme stimmt mit der in unseren Projektquellen abgelegten IFC-Datei überein:
+```text
+1d0d047a5519a2ea143b9d07625dcc94bd3a1c3b01cb86607b16d850f0a5081d
+```
+4. So funktioniert unser Check
+Automatische Prüfung mit Python
+Das Notebook führt diese Schritte aus:
+IFC-Modell herunterladen und mit IfcOpenShell einlesen.
+Alle `IfcWall`-Objekte einschliesslich der Unterklassen wie `IfcWallStandardCase` auswählen.
+Die gespeicherte Wanddicke unter `BaseQuantities.Width` auslesen und anhand der IFC-Längeneinheit in Meter umrechnen.
+Jede Wanddicke mit der Prüfregel `Width > 0 m` vergleichen.
+Die Ergebnisse für alle Wände als CSV-Datei speichern.
+Ergebnis	Bedeutung
+Bestanden	Wanddicke vorhanden und grösser als 0 m
+Durchgefallen	Wanddicke kleiner oder gleich 0 m oder ungültiger Zahlenwert
+Fehlend	Kein Wert für `BaseQuantities.Width` vorhanden
+Allein das Vorhandensein einer Zahl genügt nicht: Der Wert muss gültig und grösser als 0 sein. Eine leere Auswahl von Wandobjekten gilt ebenfalls nicht als erfolgreicher Test.
+Manuelle Kontrolle in IFClite
+Zusätzlich können wir einzelne Werte im Modell kontrollieren:
+`Team\_5\_BIMcollab\_Example\_STR.ifc` in IFClite öffnen.
+Eine Wand auswählen.
+Rechts im Eigenschaftenbereich den Reiter Mengen öffnen.
+Unter BaseQuantities den Wert Width ablesen und die Einheit beachten.
+Den Wert mit der Prüfregel vergleichen: beispielsweise 100 mm = 0,10 m > 0 m → bestanden.
+Diese Kontrolle betrifft die ausgewählte Wand. Die automatische Prüfung aller Wände und der CSV-Export erfolgen im Python-Notebook in Google Colab.
+5. Check selbst ausführen
+Das zu diesem Modell gehörende Notebook befindet sich unter:
+`checks/Team\_5\_IFC2X3\_Wanddickencheck.ipynb`
+Wanddickencheck für das BIMcollab-Modell in Google Colab öffnen
+Ausführung und Download
+Das verlinkte Notebook in Google Colab öffnen und bei Bedarf mit einem Google-Konto anmelden.
+Laufzeit → Alle ausführen wählen.
+Warten, bis alle Codezellen fertig ausgeführt sind.
+Die ausgegebenen Wandanzahlen, Wanddicken und Prüfergebnisse kontrollieren.
+Die erzeugte Datei `Team\_5\_A2\_IFC2X3\_original.csv` herunterladen. Die letzte Codezelle startet den Download in Colab.
+Falls der Download nicht automatisch startet, links den Dateibereich über das Ordnersymbol öffnen und die CSV-Datei über das Dateimenü herunterladen.
+Das Modell wird automatisch aus GitHub geladen. Eine Übertragung der in IFClite abgelesenen Werte ist nicht erforderlich. Das Notebook verwendet IfcOpenShell `0.9.0.post1` und pandas.
+Ergebnisse im Repository ablegen
+Die heruntergeladene CSV-Datei anschliessend auf GitHub in den Ordner `results/` hochladen und die Änderung mit einem Commit speichern:
+`results/Team\_5\_A2\_IFC2X3\_original.csv`
+Das Ausführen in Google Colab aktualisiert das GitHub-Repository nicht automatisch.
+6. Erwartetes Ergebnis für das Originalmodell
+Für die festgelegte Originaldatei sind folgende Werte dokumentiert. Beim erneuten Ausführen müssen die tatsächlichen Ausgaben des Notebooks damit verglichen werden.
+Ergebnis	Anzahl
+Geprüfte Wände	114
+Bestanden	114
+Durchgefallen	0
+Fehlende Werte	0
+
+Wanddicke	Anzahl
+100 mm = 0,10 m	102
+370 mm = 0,37 m	12
+Total	114
+Die CSV enthält unter anderem die GlobalId, IFC-Klasse, Wandbezeichnung, Wanddicke in Metern, Prüfregel und das Ergebnis jeder Wand. Sie wird beim Ausführen des Notebooks erzeugt.
+7. Grenzen und nächste Schritte
+Bisher ist nur die Anforderung A2 automatisiert umgesetzt.
+Die Wandbezeichnung (A1) und Materialzuordnung (A3) sind noch nicht automatisiert geprüft.
+Der Check berücksichtigt alle Wände des Modells, unabhängig von ihrem Material.
+Das BIMcollab-Beispielmodell ist kein nachgewiesenes Holzrahmenbaumodell.
+Eine positive gespeicherte Wanddicke bestätigt weder einen konstruktiv richtigen Wandaufbau noch die Übereinstimmung mit der modellierten Geometrie.
+Als Nächstes möchten wir die weiteren Informationsanforderungen automatisiert prüfen.
+Die Spezifikation und AIA-BEP-Matrix befinden sich in `requirements/`. Der Ist- und Sollprozess liegt in `workflow/`. Unsere KI-Nutzung dokumentieren wir in `KI\_USAGE.md`.
+---
+Team 5 – Data Management & BIM  
+GitHub: https://github.com/beckr5/bxmid03-hs26-team-5
