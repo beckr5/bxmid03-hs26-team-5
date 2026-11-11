@@ -45,13 +45,12 @@ Das BIMcollab-Beispielmodell befindet sich in unserem Repository unter `models/`
 
 Wir haben die Prüfung mit **Python und IfcOpenShell** umgesetzt.
 
-Der Ablauf ist bei beiden IFC-Versionen ähnlich:
+Hier ist der Ablauf für eine einzelne Wand:
 
 1. IFC-Modell einlesen. (IFClite)
 2. Wandobjekte auswählen. (Wand anklicken)
 3. Wanddicke auslesen und in Meter umrechnen. (rechts bei Eigenschaften Menge anklicken und dann nach Widght suchen)
 4. Wert mit der Prüfregel vergleichen. (wenn bei widght eine Zahl steht ist es erfüllt)
-5. Ergebnisse als CSV-Datei speichern.
 
 **Unsere Prüfregel A2 lautet:**
 
