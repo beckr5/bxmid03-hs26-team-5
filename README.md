@@ -40,7 +40,6 @@ Wir haben unsere Prüfung mit zwei unterschiedlichen IFC-Versionen getestet.
 
 Das BIMcollab-Beispielmodell befindet sich in unserem Repository unter `models/`.
 
-Mit dem zusätzlichen IFC2X3-Test möchten wir zeigen, dass unsere Prüflogik auch auf ein anderes IFC-Modell übertragen werden kann.
 
 ## 4. So funktioniert unser Check
 
