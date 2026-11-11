@@ -34,11 +34,10 @@ Wir haben unsere Prüfung mit zwei unterschiedlichen IFC-Versionen getestet.
 
 | IFC-Modell                         | Version | Verwendung                       |
 | ---------------------------------- | ------- | -------------------------------- |
-| `Demo_Holzrahmen_fehlerhaft.ifc`   | IFC4    | Negativer Test                   |
+| `Team_5_falsch.ifc`                | IFC4    | Negativer Test                   |
 | `Team_5_richtig.ifc`               | IFC4    | Positiver Test                   |
 | `Team_5_BIMcollab_Example_STR.ifc` | IFC2X3  | Zusätzlicher Test mit 114 Wänden |
 
-Die beiden IFC4-Lehrmodelle stammen aus den Unterrichtsunterlagen.
 
 Das BIMcollab-Beispielmodell befindet sich in unserem Repository unter `models/`.
 
