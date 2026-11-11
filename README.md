@@ -50,7 +50,7 @@ Wir haben die Prüfung mit **Python und IfcOpenShell** umgesetzt.
 
 Der Ablauf ist bei beiden IFC-Versionen ähnlich:
 
-1. IFC-Modell einlesen.
+1. IFC-Modell einlesen. (IFClite)
 2. Wandobjekte auswählen.
 3. Wanddicke auslesen und in Meter umrechnen.
 4. Wert mit der Prüfregel vergleichen.
