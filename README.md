@@ -153,6 +153,11 @@ Die Dateien enthalten unter anderem die GlobalId, die geprüfte Wanddicke, die P
 
 ## 7. Grenzen und nächste Schritte
 
+Notizen zum README:
+1. Punkt 5 könnte man streichen, wenn wir die Prüfung mit IDS in IFClite dokumentieren möchten. Die Anleitung dafür steht bereits in Punkt 4. Falls wir beide Prüfwege zeigen möchten, können wir ihn behalten.
+2. Punkt 6 müsste man anpassen, weil dort noch die Ergebnisse der IFC4-Lehrmodelle stehen. Für unsere beiden BIMcollab-Varianten sollten wir die tatsächlich in IFClite erhaltenen Ergebnisse dokumentieren. Bis zur Durchführung können wir sie als erwartete Ergebnisse kennzeichnen.
+3. Bei unseren beiden BIMcollab-Varianten müsste in Punkt 3 IFC2X3 statt IFC4 stehen.
+
 Mit unserem MVP haben wir die Wanddickenprüfung erfolgreich an IFC4- und IFC2X3-Modellen getestet.
 
 Es gibt aber noch einige Einschränkungen:
