@@ -54,6 +54,11 @@ Hier ist der Ablauf für eine einzelne Wand:
 
 Hier ist der Ablauf für alle Wände (mit Python):
 
+1. Öffne Team_5_richtig.ifc in IFClite.
+2. Suche oben rechts bei «Befehle …» (CTRL k) die «Datenvalidierung». Diese anklicken und dann auf der rechten Seite auf «IDS-Validierung» drücken.
+3. Drücke anschliessend auf «IDS-Datei laden» und Lade dort die Team_5_A2_Wanddicke.ids-Datei hoch. (im Desktop abgespeichert)
+4. Klicke auf «Validierung ausführen». IFClite prüft die passenden Wände gemeinsam und zeigt die bestandenen und durchgefallenen Objekte.
+
 **Unsere Prüfregel A2 lautet:**
 
 `Wanddicke > 0 m`
