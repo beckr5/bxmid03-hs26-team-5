@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+  <info><title>Team 5 – A2 Wanddicke grösser als 0</title><version>1.0</version><description>Prüft BaseQuantities.Width für IfcWall und IfcWallStandardCase im IFC2X3-BIMcollab-Modell. Werte werden als IFC-Längenmass in SI interpretiert.</description></info>
+  <specifications>
+    <specification name="A2 – Wanddicke grösser als 0 m" ifcVersion="IFC2X3" identifier="A2">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity><name><xs:restriction base="xs:string"><xs:enumeration value="IFCWALL"/><xs:enumeration value="IFCWALLSTANDARDCASE"/></xs:restriction></name></entity>
+      </applicability>
+      <requirements>
+        <property dataType="IFCLENGTHMEASURE" cardinality="required" instructions="BaseQuantities.Width muss vorhanden und grösser als 0 m sein.">
+          <propertySet><simpleValue>BaseQuantities</simpleValue></propertySet>
+          <baseName><simpleValue>Width</simpleValue></baseName>
+          <value><xs:restriction base="xs:double"><xs:minExclusive value="0"/></xs:restriction></value>
+        </property>
+      </requirements>
+    </specification>
+  </specifications>
+</ids>
